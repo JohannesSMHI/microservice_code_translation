@@ -76,8 +76,6 @@ class CodeHandler(dict):
         The given value can be either "code", "sv" or "en",
         they will all return the same dictionary.
         """
-        attribute = str(attribute)
-        value = str(value)
         if attribute.startswith('Q_'):
             attribute = 'QFLAG'
         attribute = self.mapper.get(attribute, attribute)
@@ -91,7 +89,7 @@ class CodeHandler(dict):
         if attribute and value:
             return self.map_get(attribute, value)
         elif attribute:
-            return self.get(attribute)
+            return self.get(self.mapper.get(attribute, attribute))
         elif value:
             return None
         else:
