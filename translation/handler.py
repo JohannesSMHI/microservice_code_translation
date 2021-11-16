@@ -91,7 +91,13 @@ class CodeHandler(dict):
         elif attribute:
             return self.get(self.mapper.get(attribute, attribute))
         elif value:
-            return None
+            return (
+                'Missing attribute, got attribute={}; value={}'.format(
+                    attribute,
+                    value
+                ),
+                404
+            )
         else:
             return {'available-attributes': list(self.keys())}
 
