@@ -7,8 +7,10 @@ Created on 2021-11-15 17:52
 @author: johannes
 """
 import os
+import sys
 import pandas as pd
 
+PYTHON_VERSION = int(f'{sys.version_info.major}{sys.version_info.minor}')
 RESOURCES = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 'resources'
 )
@@ -52,6 +54,7 @@ class CodeHandler(dict):
             header=1,
             dtype=str,
             keep_default_na=False,
+            engine=None if PYTHON_VERSION >= 37 else 'openpyxl'
         )
         cl = cl.rename({
             'Data_field': 'field',
