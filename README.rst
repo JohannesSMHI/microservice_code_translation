@@ -9,7 +9,7 @@ Developed by Shd at SMHI.
 
 - Python based service using Flask
 - Get translation for codes/names used at the Swedish NODC
-- `Microservice Template <https://github.com/sharksmhi/microservice_template>`_
+- `Microservice Template <https://github.com/shark-microservices/microservice_template>`_
 - Download the `code list <http://smhi.se/oceanografi/oce_info_data/shark_web/downloads/codelist_SMHI.xlsx>`_
 
 
