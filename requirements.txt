@@ -1,3 +1,4 @@
-connexion[swagger-ui]~=2.7.0
+connexion[swagger-ui]
 Flask
 pandas
+openpyxl

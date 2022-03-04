@@ -22,7 +22,9 @@ class CodeHandler(dict):
     Mapping codes against its relative translations swedish/english/short names.
 
     Initialize: ch = CodeHandler()
-    Call: ch.map_get('WAVES', '6') or ch.map_get('WAVES', 'estimated wave height: 4 - 6m')
+    Call:
+        - ch.map_get('WAVES', '6')
+        - ch.map_get('WAVES', 'estimated wave height: 4 - 6m')
     Out: {
         'Index': 1281,
         'field': 'WAVES',
@@ -56,12 +58,15 @@ class CodeHandler(dict):
             keep_default_na=False,
             engine=None if PYTHON_VERSION >= 37 else 'openpyxl'
         )
-        cl = cl.rename({
-            'Data_field': 'field',
-            'Code': 'code',
-            'Beskrivning/Svensk översättning': 'sv',
-            'Description/English translate': 'en'},
-            axis=1)
+        cl = cl.rename(
+            {
+                'Data_field': 'field',
+                'Code': 'code',
+                'Beskrivning/Svensk översättning': 'sv',
+                'Description/English translate': 'en'
+            },
+            axis=1
+        )
 
         for attr in cl['field'].unique():
             boolean = cl['field'] == attr

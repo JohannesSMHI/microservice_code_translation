@@ -16,7 +16,7 @@ Developed by Shd at SMHI.
 💻 Installation - Getting started
 ----------------------------------
 
-Create a virtual environment for your project:
+**Create a virtual environment for your project with venv:**
 
 .. code-block:: bash
 
@@ -33,3 +33,17 @@ Install requirements with pip:
 .. code-block:: bash
 
     pip install -r requirements.txt
+
+--------------------------------------------------------------------------------
+
+**Alternative with conda:**
+
+.. code-block:: bash
+
+    conda env create --file environment.yaml
+
+Activate environment:
+
+.. code-block:: bash
+
+    conda activate py38
