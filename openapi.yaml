@@ -11,7 +11,8 @@ paths:
       operationId: app.get_info
       tags:
       - code_translation
-      description: Return a json of code/name translation
+      description: Return a json of code/name translation. The given value can
+      be either "code", "sv" or "en", they will all return the same dictionary.
       parameters:
         - $ref: '#/components/parameters/attribute'
         - $ref: '#/components/parameters/value'
@@ -30,14 +31,33 @@ components:
   schemas:
     CodeTranslation:
       type: object
+      properties:
+        index:
+          type: integer
+          format: int64
+          example: 666
+        code:
+          type: string
+          example: BLK
+        field:
+          type: string
+          example: PROJ
+        sv:
+          type: string
+          example: REG Blekinge SRK
+        en:
+          type: string
+          example: Coordinated recipient monitoring of Blekingekusten
   parameters:
     attribute:
       in: query
       name: attribute
       schema:
         type: string
+        example: PROJ
     value:
       in: query
       name: value
       schema:
         type: string
+        example: BLK

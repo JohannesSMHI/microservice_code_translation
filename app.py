@@ -17,7 +17,10 @@ handler = CodeHandler()
 
 
 def get_info(*args, attribute=None, value=None, **kwargs):
-    """Get function."""
+    """Return dictionary.
+
+    Response with code/name related information based on arguments.
+    """
     return handler.get_info(
         attribute=attribute,
         value=value

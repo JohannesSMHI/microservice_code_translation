@@ -73,8 +73,11 @@ class CodeHandler(dict):
             attr_dict = {}
             for row in cl[boolean].itertuples():
                 as_dict = row._asdict()
+                if 'Index' in as_dict:
+                    as_dict['index'] = as_dict['Index']
+                    del as_dict['Index']
                 for key, value in as_dict.items():
-                    if key not in ('Index', 'field'):
+                    if key not in ('index', 'field'):
                         attr_dict.setdefault(value, as_dict)
             self.setdefault(attr, attr_dict)
 
