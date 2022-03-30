@@ -11,8 +11,7 @@ paths:
       operationId: app.get_info
       tags:
       - code_translation
-      description: Return a json of code/name translation. The given value can
-      be either "code", "sv" or "en", they will all return the same dictionary.
+      description: Return a json of code/name translation. The given value can be either "code", "sv" or "en", they will all return the same dictionary.
       parameters:
         - $ref: '#/components/parameters/attribute'
         - $ref: '#/components/parameters/value'
